@@ -1,0 +1,18 @@
+@media (min-width:1024px) {
+
+    .input-cuenta{
+        width: 50%;
+        height: 3rem;
+        font-size: 1.3rem;
+    }
+
+    .btn-pago {
+        width: 20rem;
+        height: 3.8rem;
+        border-radius: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+
+
+}

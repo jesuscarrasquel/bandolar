@@ -1,0 +1,38 @@
+@media  (min-width: 1024px) {
+
+    .navbar {
+      width: 101.5%;
+    }
+
+    .navbar-collapse {
+
+      justify-content: center;
+    }
+    .container-options, .container-sesions{
+        display: flex;
+      }
+
+   /* .collapse {
+     justify-content: flex-end;
+     
+   } */
+
+  .container-sesions {
+    position: absolute;
+    margin-left: 59rem;
+  }
+   li {
+     font-size: 1.6rem;
+   }
+
+   .font-weight-bold{
+     font-size: 3.5rem;
+   }
+
+   .container-logo .Navbar__brand-logo{
+    margin-right: 0.5rem;
+    width: 8rem;
+    height: 8rem;
+   }
+
+}

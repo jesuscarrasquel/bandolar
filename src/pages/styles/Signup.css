@@ -1,0 +1,29 @@
+.container-login .row {
+    height: 100vh; 
+    justify-content: center; 
+    align-items: center;
+}
+
+
+.navbar-brand{
+    font-weight: 700; 
+    margin-left: -5px; 
+    color: #000000;
+}
+
+.btn {
+    width: 100%;
+}
+
+.logo-container img {
+    width:6rem; 
+    height:6rem; 
+}
+
+h3 {
+    color: #fff;
+}
+
+.minimo-caracteres {
+    color: #fff;
+}

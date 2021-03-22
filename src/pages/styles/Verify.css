@@ -1,0 +1,48 @@
+html {
+    font-size: 62.5%;
+}
+
+.container-verify {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+label {
+    font-size: 1.9rem;
+}
+
+.file-verify input {
+    /* width: 50%; */
+    height: 5rem;
+    font-size: 1.5rem;
+    display: flex;
+    width: 100%;
+    /* float: left; */
+}
+.header-verify {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container-button-verify {
+    text-align: center;
+}
+
+.container .container-button-verify button {
+    width: 50%;
+    height: 3rem;
+    font-size: 1.3rem;
+    margin: 3rem 0;
+    border-radius: 1.5rem;
+}
+
+.box-verify {
+    margin: 2rem, 0;
+}
+
+.img-box {
+    width: 14.4rem;
+}
+
+

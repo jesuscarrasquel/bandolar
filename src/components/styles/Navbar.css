@@ -1,0 +1,99 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-navbar {
+  
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+}
+.navbar {
+    position: fixed;
+    z-index: 100;
+    width: 104.5%;
+    padding: 0.5rem 0;
+    background-color:  rgba(0, 0, 0, 0.5) !important;
+   
+  }
+  
+  .Navbar__brand-logo {
+    margin-right: 0.5rem;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .font-weight-bold {
+      font-size: 2rem;
+      margin-left: -1rem;
+      color: #ffffff;
+  }
+
+ul {
+  text-align: center;
+}
+
+.container-logo .navbar-brand-span {
+    font-weight: 700;
+    margin-left: -10px;
+  }
+
+
+
+  .nav-link {
+    /* position: relative; */
+    color: #ffffff !important;
+    font-weight: 700;
+  }
+
+  .nav-link-span {
+    font-weight: 600; 
+    color: #ffffff;
+  }
+
+  .sesion-container {
+    display: flex;
+  }
+
+
+
+  .nav-link-btn-login-span {
+    padding: 5px; 
+    font-size: 15px;
+  }
+
+  .nav-item-li-signup {
+    margin-left: 15px;
+  }
+
+  .nav-link-btn-signup {
+    font-weight: 600; 
+    color: #ffffff; 
+    border: 1px solid #ffffff; 
+    border-radius: 20px; 
+    background-color: #000000;
+  }
+
+  .nav-link-btn-signup-span {
+    padding: 10px; 
+    font-size: 15px;
+  }
+
+  .navbar-nav .container-sesions .nav-item > a, .navbar-nav .container-options .nav-item > a {
+    color: #000000;
+    
+  }
+
+  .navbar-nav .nav-item:hover {
+    transition: all 1s ease-out;
+    border-bottom: 0.2rem solid #ffffff;
+  }
+
+  .row .navbar .navbar-toggler {
+    background-color: darkgray;
+    margin-right: 1rem;
+  }
+

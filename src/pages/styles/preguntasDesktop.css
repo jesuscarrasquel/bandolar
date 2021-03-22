@@ -1,0 +1,34 @@
+@media (min-width:1024px) {
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        
+    }
+
+    .card-container .card {
+        width: 50%;
+    }
+
+    /* .preguntas-container {
+        height: 100vh;
+    } */
+
+    .preguntas-container .btn {
+        height: 7rem;
+        font-size: 2rem;
+    }
+
+    .collapse .card {
+        width: 100%;
+    }
+    .collapse .card .card-body {
+        font-size: 2rem;
+        width: 100%;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    
+}

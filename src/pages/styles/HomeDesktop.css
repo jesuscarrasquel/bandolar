@@ -1,0 +1,38 @@
+@media  (min-width: 1024px) {
+    .text1 {
+        font-size: 8rem;
+    }
+    .text2 {
+        font-size: 4rem;
+    }
+
+    .boton-container-home {
+        width: 50rem;
+        /* height: rem; */
+    }
+    .boton-container-home .boton-home {
+        position: relative;
+        padding: 1rem;
+        width: 50%;
+        font-size: 2rem;
+
+    }
+
+    .boton-home {
+        height: 5rem;
+    }
+
+    .row-info .box-home {
+        text-align: center;
+        padding: 2rem;
+        border: 2px solid black;
+        border-radius: 1.5rem;
+        margin: 2rem;
+    }
+
+    .row-info div img {
+        width: 40%;
+        height: auto;
+        padding: 1rem;
+    }
+}

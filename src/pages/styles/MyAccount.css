@@ -1,0 +1,45 @@
+.container-pago{
+    margin-top: 10rem;
+    height: 100vh;
+    background-color: #F4F4F4;
+}
+
+.container .row-account{
+    margin-top: 5rem;
+    justify-content: center;
+    
+}
+
+.container .row-account .col-11 {
+    text-align: center;
+    /* height: 100vh; */
+}
+
+.iniciar-compra {
+    text-align: center;
+}
+
+.input-cuenta{
+    width: 90%;
+    height: 3rem;
+    font-size: 1.3rem;
+}
+
+.copy-button{
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+
+input[type='file'] {
+    height: 5rem;
+    width: auto;
+}
+
+.btn-pago {
+    width: 9rem;
+    height: 3.8rem;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+}

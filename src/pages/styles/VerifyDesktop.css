@@ -1,0 +1,42 @@
+@media  (min-width: 1024px) {
+    .container2 {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .box-verify{
+        width: 30%;
+    }
+
+    .img-box {
+        width: 16rem;
+    }
+
+    .file-verify input {
+        width: 50%;
+        height: 5rem;
+        font-size: 1.5rem;
+        display: flex;
+    }
+
+    .container-verify form {
+        width: 100%;
+    }
+
+    .file-verify {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container .container-button-verify button {
+        width: 30%;
+        height: 3.5rem;
+        font-size: 1.5rem;
+        margin: 3rem 0;
+        border-radius: 1.5rem;
+    }
+
+    
+}
