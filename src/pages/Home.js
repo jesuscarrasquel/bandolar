@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+
+import './styles/Home.css';
+import './styles/HomeDesktop.css';
+
 import Casa from '../assets/stuff/casa.png'
 import Dinero from '../assets/stuff/dinero.png'
 import Rebaja from '../assets/stuff/rebaja.png'
 import Reloj from '../assets/stuff/reloj.png'
-
-import './styles/Home.css';
-import './styles/HomeDesktop.css';
 
 import BTC from '../assets/pagos/BTC.png';
 import cash from '../assets/pagos/cash.png';
@@ -15,33 +16,60 @@ import paypal from '../assets/pagos/paypal.png';
 import wiretransfer from '../assets/pagos/wiretransfer.png';
 import zelle from '../assets/pagos/zelle.png';
 
+import HomeList from '../components/HomeList';
+
 
 class Home extends Component {
 
-    componentDidMount() {
+    state = {
+        data: []
+    }
+
+    mostrarScroll = () => {
         let animado = document.querySelectorAll(".animado");
+        let scrollTop = document.documentElement.scrollTop;
 
-        function mostrarScroll() {
-            let scrollTop = document.documentElement.scrollTop;
-
-            for (let index = 0; index < animado.length; index++) {
-                const alturaAnimado = animado[index].offsetTop;
-                
-                if(alturaAnimado - 500 < scrollTop) {
-                    animado[index].style.opacity = 1;
-                    animado[index].classList.add("mostrarArriba");
-                }
-  
+        for (let index = 0; index < animado.length; index++) {
+            const alturaAnimado = animado[index].offsetTop;
+            
+            if(alturaAnimado - 500 < scrollTop) {
+                animado[index].style.opacity = 1;
+                animado[index].classList.add("mostrarArriba");
             }
-        }
 
-        window.addEventListener("scroll", mostrarScroll); 
+        }
+    }
+
+    componentDidMount() {
+
+        window.addEventListener("scroll", this.mostrarScroll); 
+
+        this.setState({
+            data: [
+                {
+                    image: Casa,
+                    info: "Necesidad de cuenta en Dólares",
+                    description: "Conscientes de la necesidad de poseer y manejar una cuenta en dólares, ofrecemos la forma más rápida y segura de obtener una a distancia."
+                },{
+                    image: Dinero,
+                    info: "Entrega Rápida",
+                    description: "Ofrecemos una entrega rápida. Nuestros plazos de entrega son de aproximadamente de cinco a siete dias."   
+                },{
+                    image: Rebaja,
+                    info: "¡Precios accesibles!",
+                    description: "Conscientes de la necesidad de poseer y manejar una cuenta en dólares, ofrecemos la forma más rápida y segura de obtener una a distancia."
+                },{
+                    image: Reloj,
+                    info: "Domicilio en Estados Unidos",
+                    description: "También te asesoramos para que obtengas una dirección o casillero en Estados Unidos en caso de no poseer alguna al momento de la apertura de la cuenta."
+                }
+            ]
+        })
     }
 
 
     render() {
 
-    
         return (
             <>
             <Navbar/>
@@ -72,40 +100,13 @@ class Home extends Component {
                             <h1>¿Quieres saber más?</h1>
                         </div>
 
-                        
-
-                        <div className="col-12 col-md-5 box-home animado">
-                            <img src={Casa} alt="Casa"/>
-                            <h2>Necesidad de cuenta en Dólares</h2>
-                            <p>Conscientes de la necesidad de poseer y manejar una cuenta en dólares, ofrecemos la forma más rápida y segura de obtener una a distancia.</p>
-                        </div>
-                        <div className="col-12 col-md-5 box-home animado">
-                        <img src={Dinero} alt="Dinero"/>
-                            <h2>Entrega Rápida</h2>
-                            <p>Ofrecemos una entrega rápida. Nuestros plazos de entrega son de aproximadamente de cinco a siete dias.</p>
-                        </div>
-                        <div className="col-12 col-md-5 box-home animado">
-                        <img src={Rebaja} alt="Rebaja"/>
-                            <h2>¡Precios accesibles!</h2>
-                            <p>Los precios más competitivos del mercado.
-                                Contáctanos para conocer las promociones actuales.</p>
-                        </div>
-                        <div className="col-12 col-md-5 box-home animado">
-                        <img src={Reloj} alt="Tiempo"/>
-                            <h2>Domicilio en Estados Unidos</h2>
-                            <p>También te asesoramos para que obtengas una dirección o casillero en Estados Unidos en caso de no poseer alguna al momento de la apertura de la cuenta.</p>
-                        </div>
+                        <HomeList badge={this.state.data}/>
                         
                     </div>
 
 
 
                     <div className="row row-info">
-
-
-
-                            
-    
 
                         <div className="title-quieresmas">
                             <h1 id="formas-pago-title">Formas de pago</h1>

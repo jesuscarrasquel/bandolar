@@ -165,3 +165,33 @@
     font-size: 1.6rem;
 }
 
+/* #bitcoin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/pagos/btc-pay.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#bitcoin h2, #bitcoin p {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+#cash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/pagos/cash.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#cash h2, #cash p {
+    color: #000000;
+    font-weight: 700;
+} */
+
