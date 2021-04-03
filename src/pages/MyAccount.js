@@ -1,16 +1,60 @@
 import React, { Component } from 'react';
-import NavbarIn from '../components/NavbarIn';
+import Navbar from '../components/Navbar';
 import './styles/MyAccount.css';
 import './styles/MyAccountDesktop.css';
 
-import axios from 'axios';
 import { pagoComprobante } from '../api/peticiones';
+import { pedirNombre } from '../api/peticiones';
+import * as cons from '../api/constant';
 
 class MyAccount extends Component {
 
-    state = {
-        pago: '',
-        message: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            pago: '',
+            message: '',
+            nombre: ''
+        }
+
+        const sesion = window.localStorage.getItem('email')
+
+        if(sesion == "" || sesion == null) {
+            window.location.href = `${cons.url_client}`;
+        }
+    }
+
+    // state = {
+
+    // }
+
+    async componentDidMount() {
+
+        const sesion = window.localStorage.getItem('email')
+
+        if(sesion == "" || sesion == null) {
+            window.location.href = `${cons.url_client}`;
+        }
+
+        const email = this.props.match.params.key;
+        // const email = this.props.email;
+        const type = "nombre";
+
+        const password = '';
+        const confirm_password = ''
+
+        const send_email = new FormData();
+        send_email.append("email", email)
+        send_email.append("type", type);
+        send_email.append('password', password);
+        send_email.append('confirm_password', confirm_password);
+
+        const nombre = await pedirNombre(send_email);
+
+        this.setState({
+            nombre: nombre[0].username
+        })
+
     }
 
     sendImage2 = async (event) => {
@@ -29,25 +73,10 @@ class MyAccount extends Component {
 
         const pago = await pagoComprobante(data);
 
-        console.log(pago)
-
         this.setState({
             message: `${pago}`
         })
 
-        // http://localhost:3001/pagocuenta
-
-
-
-        // axios.post('https://www.bandolar.com/bandolarback/', data)
-        //     .then(res => {  
-        //         console.log(res.data)
-        //         this.setState({
-        //             message: res.data
-        //         })
-
-        //     })
-        //     .catch(err => console.log(err));
    
     }
 
@@ -71,7 +100,7 @@ class MyAccount extends Component {
         if(this.state.message != '') {
 
             return(
-                <div class="alert alert-warning" role="alert">
+                <div className="alert alert-warning" role="alert">
                 <h2>{this.state.message}</h2>
                 </div>
             );
@@ -82,12 +111,12 @@ class MyAccount extends Component {
     render() {
         return (
             <>
-             <NavbarIn/>
+             <Navbar/>
             <div className="container container-pago">
 
                 <div className="row row-account">
                     <div className="col-11">
-                        <h1>Bienvenido a tu cuenta</h1>
+                        <h1>Bienvenido a tu cuenta <span className="text-capitalize">{this.state.nombre}</span></h1>
 
                         <br/>
 
@@ -103,7 +132,7 @@ class MyAccount extends Component {
             <div className="iniciar-compra">
                 <h2>¿Quieres iniciar una compra?</h2>
                 <br/>
-                <h3>Bitcoin adress</h3>
+                <h2>Bitcoin adress</h2>
                 <br/>
 
                 <input type="text" value="bc1qc7xqlre8k6yn2nrz6scysrm0aj6tdwjqjs98xv" readOnly className="input-cuenta" id="bitcoin-cuenta"/>
@@ -111,7 +140,7 @@ class MyAccount extends Component {
               
 
                 <br/><br/>
-            <h3>Zelle adress</h3>
+            <h2>Zelle adress</h2>
             <input type="text" value="Jose Barradas barradasjose2020@gmail.com" readOnly className="input-cuenta" id="zelle-cuenta"/>
             <button className="copy-button" onClick={() => {this.copiar2()}}>Copiar</button>
 
@@ -121,7 +150,7 @@ class MyAccount extends Component {
 
             <br/><br/>
 
-            <h3>Imagen del comprobante de la transacción</h3>
+            <h2>Imagen del comprobante de la transacción</h2>
 
             <br/>
 

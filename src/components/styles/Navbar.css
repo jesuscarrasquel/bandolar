@@ -97,3 +97,18 @@ ul {
     margin-right: 1rem;
   }
 
+  .container-sesions .nav-item button {
+    background-color: rgb(0,0,0,0);
+    border: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    padding: 0.3rem;
+    
+  }
+
+  form .btn-pago {
+    width: 15rem;
+  }
+

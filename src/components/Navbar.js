@@ -4,6 +4,8 @@ import './styles/Navbar.css';
 import './styles/NavbarLaptop.css';
 import './styles/NavbarDesktop.css';
 
+import * as cons from '../api/constant';
+
 import {
   Collapse,
   Navbar,
@@ -16,13 +18,35 @@ import {
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  const [isLogin, setIsLogin] = useState("");
+
+  useEffect(() => {
+    const _email = window.localStorage.getItem('email');
+
+    setIsLogin(_email);
+
+    if(_email == null) {
+      setIsLogin("");
+    }
+
+  },[])
+
+  const cerrarSesion = () => {
+    window.localStorage.removeItem('email');
+    window.location.href = `${cons.url_client}`;
+  }
 
   
   const toggle = () => setIsOpen(!isOpen);
 
   return (
+
+    
+
     <div id="menu" className="container-fluid container-navbar">
 
+      {console.log(isLogin)}
       <div className="row">
     
         <Navbar color="light" light expand="md">
@@ -51,14 +75,37 @@ const Example = (props) => {
                 <NavLink href="/preguntas/">PREGUNTAS FRECUENTES</NavLink>
               </NavItem>
             </div>
+
+
             
             <div className="container-sesions">
-              <NavItem>
+
+            {
+              (isLogin == "") ?
+              <>
+               <NavItem>
                 <NavLink href="/login/">Iniciar sesión</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/signup/">Regístrate</NavLink>
               </NavItem>
+
+              </>:
+
+              <>
+              <NavItem>
+                {/* <NavLink href="/">Salir</NavLink> */}
+                <button onClick={cerrarSesion}>Salir</button>
+              </NavItem>
+
+
+              </>
+            }
+
+
+
+
+             
             </div>
            
           </Nav>

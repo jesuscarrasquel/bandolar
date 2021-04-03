@@ -6,6 +6,9 @@ import * as cons from '../api/constant';
 import './styles/Login.css';
 import './styles/LoginDesktop.css';
 
+import MyAccount from './MyAccount';
+import Verify from './Verify';
+
 class Login extends Component {
 
 
@@ -36,6 +39,8 @@ class Login extends Component {
             })               
         }else {
 
+        window.localStorage.setItem("email", email);
+        
         type = "check";
         f.append("type", type);
         console.log(f);
@@ -44,43 +49,22 @@ class Login extends Component {
 
             console.log(res_ckeck);
             if(res_ckeck == "C") {
-                // window.location.href = `https://www.bandolar.com/my-account/${email}`
+              
+                // PAGINA DE MI CUENTA
+
+                // <MyAccount email = {email}/>
+
                 window.location.href = `${cons.url_client}/my-account/${email}`
 
             }else {
+                // PAGINA DE VERIFICACION
+
+                // <Verify email = {email}/>
                 window.location.href = `${cons.url_client}/verify/${email}`
 
-                // window.location.href = `https://www.bandolar.com/verify/${email}`
             }
 
             }
-
-        // await axios.post('https://www.bandolar.com/bandolarback/', f)
-        // .then(async (response) => {
-        //     console.log(response.data)
-
-        //     if(response.data == "Error en la combinación entre usuario y contraseña") {
-        //         this.setState({
-        //             status: response.data
-        //         })               
-        //     }else {
-
-        //         type = "check";
-        //         f.append("type", type);
-        //         console.log(f);
-        //         await axios.post('https://www.bandolar.com/bandolarback/', f).then((res) => {
-        //             console.log(res.data);
-        //             if(res.data == "C") {
-        //                 window.location.href = `https://www.bandolar.com/my-account/${email}`
-        //             }else {
-        //                 window.location.href = `https://www.bandolar.com/verify/${email}`
-        //             }
-
-        //         })
-
-        //     }
-        // })
-
 
     }
  
@@ -97,38 +81,38 @@ class Login extends Component {
         return (
             <>
             {/* <Navbar/> */}
-            <div class="container-fluid container-login">
-                <div class="row">
-                    {/* <div class="col-12 col-lg-6"> */}
+            <div className="container-fluid container-login">
+                <div className="row">
+                    {/* <div className="col-12 col-lg-6"> */}
 
-                        <div class="card-login">
+                        <div className="card-login">
                             
                                     <h1>Iniciar sesión</h1>
                                 
-                                <div class="container1">
+                                <div className="container1">
 
 
-                                    <form class="form-group" method="POST">
+                                    <form className="form-group" method="POST">
                                         
                             
                                             <div id="div-form">
                                             {/* <br/> */}
 
-                                            <div class="form-login">
+                                            <div className="form-login">
                                             
-                                                <input type="email" class="input form-control" id="email-login" name="email"  required onChange={this.handlechange}></input>
+                                                <input type="email" className="input form-control" id="email-login" name="email"  required onChange={this.handlechange}></input>
                                                 <label htmlFor="">Correo electrónico</label>
                                             </div>
                                             <br/>
-                                            <div class="form-login">
-                                                <input type="password" class="input form-control" id="password-login" name="password"  required onChange={this.handlechange}></input>
+                                            <div className="form-login">
+                                                <input type="password" className="input form-control" id="password-login" name="password"  required onChange={this.handlechange}></input>
                                                 <label htmlFor="">Contraseña</label>
                                             </div>
                                             <br/>
 
-                                            <div class="boton-container text-center">
+                                            <div className="boton-container text-center">
 
-                                                <button type="button" name="login_b" id="login_b" class=" boton-login" onClick={this.loguearse}>
+                                                <button type="button" name="login_b" id="login_b" className=" boton-login" onClick={this.loguearse}>
                                                     Iniciar sesión
                                                 </button>
 

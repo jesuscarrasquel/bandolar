@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavbarIn from '../components/NavbarIn';
+import Navbar from '../components/Navbar';
 import dni from '../assets/veryfy/dni.png'
 import pasaporte from '../assets/veryfy/pasaporte.png'
 import ui from '../assets/veryfy/ui.png'
@@ -20,7 +20,14 @@ class Verify extends Component {
         };
 
         const email = this.props.match.params.key;
+        // const email = this.props.email;
         console.log(email);
+
+        const sesion = window.localStorage.getItem('email')
+
+        if(sesion == "" || sesion == null) {
+            window.location.href = `${cons.url_client}`;
+        }
     }
 
 
@@ -47,15 +54,6 @@ class Verify extends Component {
 
         window.location.href = `${cons.url_client}/my-account/${email}`;
 
-
-        // await axios.post('https://www.bandolar.com/bandolarback/', data)
-        //     .then((res) => {
-        //         console.log(res.data);
-             
-        //     window.location.href = `https://www.bandolar.com/my-account/${email}`;
-     
-        //     })
-        //     .catch(err => console.log(err));
  
     }
 
@@ -66,7 +64,7 @@ class Verify extends Component {
             
             <>
             
-            <NavbarIn/>
+            <Navbar/>
             <div className="container container-verify">
 
                 <form method="POST" encType="multipart/form-data">
@@ -74,22 +72,22 @@ class Verify extends Component {
                         <h1>Verificación de identidad</h1>
                     </div>
                     <label id="label-photo" for="">Sube una foto de cualquier documento de estos tres.</label>
-                        <div class="container2">  
+                        <div className="container2">  
 
                             <div className="box-verify">
                                 
-                                <label class="lab-cs" for="">Licencia de Conducir<br/> </label><br/>
-                                <label for="input"><img class="img-box" src={dni} width="144px" alt=""></img></label>
+                                <label className="lab-cs" for="">Licencia de Conducir<br/> </label><br/>
+                                <label for="input"><img className="img-box" src={dni} width="144px" alt=""></img></label>
                             </div>
 
                             <div className="box-verify">
-                                <label class="lab-cs" for="">Pasaporte</label><br/><br/>
-                                <label for="input"><img class="img-box" src={pasaporte} width="144px" alt=""></img></label>
+                                <label className="lab-cs" for="">Pasaporte</label><br/><br/>
+                                <label for="input"><img className="img-box" src={pasaporte} width="144px" alt=""></img></label>
                             </div>
 
                             <div className="box-verify">
-                                <label class="lab-cs" for="">Cédula</label><br/>
-                                <label for="input"><img class="img-box" src={ui} width="144px" alt=""></img></label>
+                                <label className="lab-cs" for="">Cédula</label><br/>
+                                <label for="input"><img className="img-box" src={ui} width="144px" alt=""></img></label>
                             </div>     
 
                         </div>
@@ -105,7 +103,7 @@ class Verify extends Component {
 
                     <label id="label-photo" for="">Sube una foto de ti mismo mostrando el documento.</label>
 
-                        <div class="container2">            
+                        <div className="container2">            
                             <label for="foto"><img src={foto} width="300px" alt=""></img></label>
                             
                         </div>
@@ -124,7 +122,7 @@ class Verify extends Component {
 
                     <div className="container-button-verify">
 
-                        <button type="button" name="verify" class="btn btn-primary" onClick={this.sendImage}>
+                        <button type="button" name="verify" className="btn btn-primary" onClick={this.sendImage}>
                             Verificar
                         </button>
 

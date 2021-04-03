@@ -47,18 +47,22 @@ class Home extends Component {
         this.setState({
             data: [
                 {
+                    id: 1,
                     image: Casa,
                     info: "Necesidad de cuenta en Dólares",
                     description: "Conscientes de la necesidad de poseer y manejar una cuenta en dólares, ofrecemos la forma más rápida y segura de obtener una a distancia."
                 },{
+                    id: 2,
                     image: Dinero,
                     info: "Entrega Rápida",
                     description: "Ofrecemos una entrega rápida. Nuestros plazos de entrega son de aproximadamente de cinco a siete dias."   
                 },{
+                    id: 3,
                     image: Rebaja,
                     info: "¡Precios accesibles!",
                     description: "Conscientes de la necesidad de poseer y manejar una cuenta en dólares, ofrecemos la forma más rápida y segura de obtener una a distancia."
                 },{
+                    id: 4,
                     image: Reloj,
                     info: "Domicilio en Estados Unidos",
                     description: "También te asesoramos para que obtengas una dirección o casillero en Estados Unidos en caso de no poseer alguna al momento de la apertura de la cuenta."
@@ -82,7 +86,7 @@ class Home extends Component {
 
                         <div className="col-12">
 
-                            <a href="https://wa.link/gsxn1r" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+                            <a href="https://wa.link/gsxn1r" className="whatsapp" target="_blank"> <i className="fa fa-whatsapp whatsapp-icon"></i></a>
 
                             <span className="text1  animate__animated animate__fadeInUp">Bandolar</span>
                             <span className="text2 animate__animated animate__zoomIn">Tu acceso a la economía mundial</span>

@@ -58,3 +58,12 @@ export const pagoComprobante = async (comprobanteImagen) => {
     }
 }
 
+export const pedirNombre = async (correo) => {
+    try {
+        const res = await axios.post(cons.url_server, correo);
+        return res.data;
+    } catch (error) {
+        return error;
+    }
+} 
+
