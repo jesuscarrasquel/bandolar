@@ -38,10 +38,10 @@ $method = $_SERVER['REQUEST_METHOD'];
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 587;                                    // TCP port to connect to
         
-                $mail->setFrom('jesusmcc1106@gmail.com', 'Form Bandolar');
-                $mail->addAddress('jesusmcc1106@gmail.com');     // Add a recipient
+                $mail->setFrom('', 'Form Bandolar');
+                $mail->addAddress('');     // Add a recipient
                 // $mail->addAddress('ellen@example.com');               // Name is optional
-                $mail->addReplyTo('jesusmcc1106@gmail.com');
+                $mail->addReplyTo('');
                 // $mail->addCC('cc@example.com');
                 // $mail->addBCC('bcc@example.com');
         
