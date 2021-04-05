@@ -156,7 +156,7 @@ class MyAccount extends Component {
 
             <form method="post">
 
-                <input type="file" name="pago" id="pago" className="input-file-pago" onChange={ e => {
+                <input type="file" name="pago" id="pago" className="input-file-pago" accept=".jpg" onChange={ e => {
                         const file = e.target.files[0];
                         this.setState({pago: file});
                     }}/>
